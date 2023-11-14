@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -101,19 +99,24 @@ class _SkeletonizerDemoPageState extends State<SkeletonizerDemoPage> {
                 ),
               ),
             ),
-            body: Skeletonizer(
-              enabled: _enabled,
-              child: ListView.builder(
-                padding: const EdgeInsets.all(16),
-                itemCount: blogs.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    child: ListTile(
-                      title: Text(blogs[index]["title"]!),
-                      subtitle: Text(blogs[index]["subtitle"]!),
-                    ),
-                  );
-                },
+            body: Center(
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 450),
+                child: Skeletonizer(
+                  enabled: _enabled,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(16),
+                    itemCount: blogs.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(blogs[index]["title"]!),
+                          subtitle: Text(blogs[index]["subtitle"]!),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
           ),
