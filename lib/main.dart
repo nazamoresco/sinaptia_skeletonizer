@@ -78,13 +78,16 @@ class _SkeletonizerDemoPageState extends State<SkeletonizerDemoPage> {
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
-              title: Image.asset("assets/favicon.ico"),
+              title: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset("assets/favicon.ico"),
+              ),
               centerTitle: true,
             ),
             floatingActionButton: Padding(
-              padding: const EdgeInsets.only(bottom: 0, right: 4),
+              padding: const EdgeInsets.only(bottom: 0, right: 16),
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 110),
+                padding: const EdgeInsets.only(bottom: 16),
                 child: FloatingActionButton(
                   child: Icon(
                     _enabled
